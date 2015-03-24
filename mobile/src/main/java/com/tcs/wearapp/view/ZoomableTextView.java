@@ -62,20 +62,22 @@ public class ZoomableTextView extends TextView implements View.OnTouchListener{
                 if (pureaction == MotionEvent.ACTION_POINTER_DOWN) {
                     mBaseDist = getDistance(event);
                     mBaseRatio = mRatio;
-                }else if (pureaction == MotionEvent.ACTION_POINTER_UP) {
+                }/*else if (pureaction == MotionEvent.ACTION_POINTER_UP) {
                     mBaseDist = getDistance(event);
                     mBaseRatio = mRatio;
                     this.setTextSize(textsize);
                     recordChanges(textsize);
-                } else {
+                }*/ else {
                     float delta = (getDistance(event) - mBaseDist) / STEP;
                     float multi = (float) Math.pow(2, delta);
                     mRatio = Math.min(1024.0f, Math.max(0.1f, mBaseRatio * multi));
 
                     textsize = (mRatio + fontSize);
-                    if(textsize > maxFontSize)
-                        textsize = maxFontSize;
-                    //this.setTextSize(textsize);
+                   /* if(textsize > maxFontSize)
+                        textsize = maxFontSize;*/
+                    this.setTextSize(textsize);
+
+                    //recordChanges(textsize);
                 }
             }
             return true;
