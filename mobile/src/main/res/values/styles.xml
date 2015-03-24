@@ -1,0 +1,9 @@
+<resources>
+
+<style name="AppTheme" parent="android:Theme.DeviceDefault.Light.NoActionBar"/>
+
+
+    <declare-styleable name="ZoomableTextView">
+        <attr name="isZoomable" format="boolean" />
+    </declare-styleable>
+</resources>
